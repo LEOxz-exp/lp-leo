@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lição6-leonardo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .resultado {
+            font-size: 18px;
+            color: #333;
+        }
+        input {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificação de Números</h1>
+    <label for="num1">Número 1:</label>
+    <input type="number" id="num1" placeholder="Digite o primeiro número">
+    <br>
+    <label for="num2">Número 2:</label>
+    <input type="number" id="num2" placeholder="Digite o segundo número">
+    <br>
+    <label for="num3">Número 3:</label>
+    <input type="number" id="num3" placeholder="Digite o terceiro número">
+    <br>
+    <button onclick="verificarNumeros()">Verificar</button>
+    <div class="resultado" id="resultado"></div>
+
+    <script>
+        function verificarNumeros() {
+          
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const num3 = parseFloat(document.getElementById('num3').value);
+
+           
+            if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+                document.getElementById('resultado').innerText = 'Por favor, insira três números válidos.';
+                return;
+            }
+
+           
+            const vetor = [num1, num2, num3];
+
+          
+            const soma = vetor.reduce((acc, num) => acc + num, 0);
+
+           
+            let resultado;
+            if (soma > 100) {
+                resultado = Math.max(...vetor);
+            } else {
+                resultado = Math.min(...vetor);
+            }
+
+           
+            document.getElementById('resultado').innerText = `Resultado: ${resultado}`;
+        }
+    </script>
+</body>
+</html>

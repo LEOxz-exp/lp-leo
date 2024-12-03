@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lição1-leonardo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .resultado {
+            font-size: 18px;
+            color: #fc0000;
+        }
+        input {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcular a Soma dos Números</h1>
+    <label for="num1">Número 1:</label>
+    <input type="number" id="num1" placeholder="Digite o primeiro número">
+    <br>
+    <label for="num2">Número 2:</label>
+    <input type="number" id="num2" placeholder="Digite o segundo número">
+    <br>
+    <label for="num3">Número 3:</label>
+    <input type="number" id="num3" placeholder="Digite o terceiro número">
+    <br>
+    <label for="num4">Número 4:</label>
+    <input type="number" id="num4" placeholder="Digite o quarto número">
+    <br>
+    <label for="num5">Número 5:</label>
+    <input type="number" id="num5" placeholder="Digite o quinto número">
+    <br>
+    <button onclick="calcularSoma()">Calcular Soma</button>
+    <div class="resultado" id="resultado"></div>
+
+    <script>
+        function calcularSoma() {
+           
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const num3 = parseFloat(document.getElementById('num3').value);
+            const num4 = parseFloat(document.getElementById('num4').value);
+            const num5 = parseFloat(document.getElementById('num5').value);
+
+           
+            if (isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4) || isNaN(num5)) {
+                document.getElementById('resultado').innerText = 'Por favor, insira cinco números válidos.';
+                return;
+            }
+
+            const vetor = [num1, num2, num3, num4, num5];
+
+           
+            let soma = 0;
+
+           
+            for (let i = 0; i < vetor.length; i++) {
+                soma += vetor[i];
+            }
+
+           
+            document.getElementById('resultado').innerText = `Soma dos números: ${soma}`;
+        }
+    </script>
+</body>
+</html>

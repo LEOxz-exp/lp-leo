@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lição3-leonardo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        input[type="number"] {
+            margin: 5px 0;
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ordenar Números</h1>
+        <label for="num1">Número 1:</label>
+        <input type="number" id="num1">
+        <label for="num2">Número 2:</label>
+        <input type="number" id="num2">
+        <label for="num3">Número 3:</label>
+        <input type="number" id="num3">
+        <label for="num4">Número 4:</label>
+        <input type="number" id="num4">
+        <label for="num5">Número 5:</label>
+        <input type="number" id="num5">
+        <button onclick="ordenarNumeros()">Ordenar</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function ordenarNumeros() {
+            
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const num3 = parseFloat(document.getElementById('num3').value);
+            const num4 = parseFloat(document.getElementById('num4').value);
+            const num5 = parseFloat(document.getElementById('num5').value);
+
+           
+            const numeros = [num1, num2, num3, num4, num5];
+
+            
+            numeros.sort((a, b) => b - a);
+
+         
+            document.getElementById('result').innerText = `Números em ordem decrescente: ${numeros.join(', ')}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lição5-leonardo</title>
+  </head>
+  <body>
+    <input class="inp1" type="text" id="inp1" value=" " />
+    <input class="inp2" type="text" id="inp2" />
+    <input class="inp3" type="text" id="inp3" />
+    <label for="inp1"><button onclick="addTo1()">Adicionar</button></label>
+    <label for="inp2"><button onclick="addTo2()">Adicionar</button></label>
+    <label for="inp3"><button onclick="addTo3()">Adicionar</button></label>
+    <div class="endDiv" id="endDiv"></div>
+  </body>
+  <script>
+    var arrEnd = [];
+    var arr1 = [];
+    var arr2 = [];
+    var arr3 = [];
+    var endText = document.getElementById("endDiv");
+    function addTo1() {
+      var add = document.getElementById("inp1").value;
+      endText = document.getElementById("endDiv");
+      arr1.push(add);
+      console.log(arr1);
+      document.getElementById("inp1").value = " ";
+      arrEnd.push(arr1);
+      endText.textContent = arrEnd.join("");
+    }
+    function addTo2() {
+      var add2 = document.getElementById("inp2").value;
+      arr2.push(add2);
+      console.log(arr2);
+      document.getElementById("inp2").value = " ";
+      arrEnd.push(arr2);
+      endText.textContent = arrEnd.join("");
+    }
+    function addTo3() {
+      var add3 = document.getElementById("inp3").value;
+      arr3.push(add3);
+      console.log(arr3);
+      document.getElementById("inp3").value = " ";
+      arrEnd.push(arr3);
+      endText.textContent = arrEnd.join("");
+    }
+  </script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lição2-leonardo</title>
+</head>
+<body>
+    <script>
+        function ordenarPalavras() {
+            
+            let palavras = [
+                document.getElementById('palavra1').value,
+                document.getElementById('palavra2').value,
+                document.getElementById('palavra3').value,
+                document.getElementById('palavra4').value
+            ];
+
+           
+            palavras.sort();
+
+           
+            document.getElementById('resultado').innerText = 'Palavras em ordem alfabética: ' + palavras.join(', ');
+        }
+    </script>
+    <body>
+        <h1>Ordenador de Palavras</h1>
+        <p>Digite 4 palavras:</p>
+        <form>
+            <label for="palavra1">Palavra 1:</label>
+            <input type="text" id="palavra1" required><br><br>
+    
+            <label for="palavra2">Palavra 2:</label>
+            <input type="text" id="palavra2" required><br><br>
+    
+            <label for="palavra3">Palavra 3:</label>
+            <input type="text" id="palavra3" required><br><br>
+    
+            <label for="palavra4">Palavra 4:</label>
+            <input type="text" id="palavra4" required><br><br>
+    
+            <button type="button" onclick="ordenarPalavras()">Ordenar Palavras</button>
+        </form>
+        <p id="resultado"></p>
+    </body>
+</body>
+</html>
